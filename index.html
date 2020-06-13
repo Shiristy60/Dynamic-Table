@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>assignment</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<body>
+	<div class="details">
+		<h1>Add a new entry <button class="btn btn-sm btn-success" id="toggle-form"><i class="fa fa-plus"></i></button></h1>
+		<table id="tab">
+			<tr>
+				<td id="num1"class="number">1</td>
+				<td id="name1"class="name">Shiristy</td>
+				<td class="update" id="1"><button class="btn btn-sm btn-primary">Update</button></td>
+				<td class="delete"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="entry mt-5">
+			<form class="Main-form" method="GET" action="index.html">
+				<div class="container">
+					<h4>Enter Details</h4>
+					<div class="form-group">
+						<label for="fnum">Sr. No.</label><br>
+						<input type="text" name="fnum" id="fnum" placeholder="Enter serial number" class="form-control-sm">
+					</div>
+
+					<div class="form-group">
+						<label for="fname">Name</label><br>
+						<input type="text" id="fname" name="fname" placeholder="Your Name" class="form-control-sm">
+					</div>
+					<div class="form-group">
+						<input type="button" id="submit" value="submit" class="btn btn-sm btn-info">
+						<input type="button" id="change" value="okay" class="btn btn-sm btn-secondary">
+						<input type="button" id="cancel" value="cancel" class="btn btn-sm btn-light ml-auto">
+					</div>
+				</div>
+			</form>
+	</div>
+
+    <script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>
