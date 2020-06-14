@@ -1,10 +1,15 @@
 var form=document.getElementsByTagName("form");
 var temp=1;
+var submitBtn=document.getElementById("submit");
+var updateBtn=document.getElementById("change");
 var numid;
 var nameid;
 
 $("#toggle-form").on("click", function(){
 	$(form).toggleClass("Main-form");
+	
+	$(submitBtn).removeClass("submit");
+	$(updateBtn).addClass("change");
 })
 
 
@@ -15,6 +20,9 @@ $("table").on("click", ".delete", function(){
 
 $("table").on("click", ".update", function(){
 	$(form).toggleClass("Main-form");
+
+	$(updateBtn).removeClass("change");
+	$(submitBtn).addClass("submit");
 
 	var id=$(this).attr("id");
 	//console.log('Update Button ID'+id);
