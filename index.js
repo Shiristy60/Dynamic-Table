@@ -1,5 +1,7 @@
 var form=document.getElementsByTagName("form");
 var temp=1;
+var numid;
+var nameid;
 
 $("#toggle-form").on("click", function(){
 	$(form).toggleClass("Main-form");
@@ -8,39 +10,47 @@ $("#toggle-form").on("click", function(){
 
 $("table").on("click", ".delete", function(){
 	$(this).parent().remove();
-	temp--;
+	//temp--;
 })
 
 $("table").on("click", ".update", function(){
 	$(form).toggleClass("Main-form");
 
 	var id=$(this).attr("id");
+	//console.log('Update Button ID'+id);
 
-	var numid="#num"+id;
-	var nameid="#name"+id;
+	numid="num"+id;
+	nameid="name"+id;
+	//console.log('Sno of update '+numid);
+	//console.log("Name of update"+nameid);
 
-	var numinform=document.querySelector(numid).innerHTML;
-	var nameinform=document.querySelector(nameid).innerText;
+	var numinform=document.getElementById(numid).innerText;
+	var nameinform=document.getElementById(nameid).innerText;
+	//console.log(numinform)
 
 	document.querySelector("#fname").value=nameinform;
 	document.querySelector("#fnum").value=numinform;
 
+})
+
 	$("form").on("click", "#change", function(){
+
 		var tnum=$("#fnum").val();
+		//console.log('form sno '+tnum);
 		var tname=$("#fname").val();
+		//console.log('form name'+tname);
+
+		document.getElementById(nameid).innerHTML=tname;
+		//console.log(tname);
+		document.getElementById(numid).innerHTML=tnum;
+		//console.log(tnum);
 
 		$("#fnum").val("");
 		$("#fname").val("");
 
-		document.querySelector(nameid).innerText=tname;
-		console.log(tname);
-		document.querySelector(numid).innerText=tnum;
-		console.log(tnum);
-
 
 		$(form).toggleClass("Main-form");
 	})
-})
 
 $("form").on("click", "#submit", function(){
 	var snum=$("#fnum").val();
